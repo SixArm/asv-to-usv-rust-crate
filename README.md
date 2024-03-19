@@ -1,6 +1,7 @@
 # asv-to-usv
 
-Convert ASCII Separated Values (ASV) to [Unicode Separated Values (USV)](https://github.com/sixarm/usv).
+Convert [ASCII Separated Values (ASV)](https://github.com/SixArm/usv/tree/main/doc/comparisons/asv) 
+to [Unicode Separated Values (USV)](https://github.com/sixarm/usv).
 
 Syntax:
 

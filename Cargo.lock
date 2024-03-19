@@ -67,7 +67,7 @@ dependencies = [
 
 [[package]]
 name = "asv-to-usv"
-version = "1.2.0"
+version = "1.2.1"
 dependencies = [
  "clap",
  "criterion",

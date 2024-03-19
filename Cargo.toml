@@ -1,6 +1,6 @@
 [package]
 name = "asv-to-usv"
-version = "1.2.0"
+version = "1.2.1"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "ASV to USV: Convert ASCII Separated Values (ASV) to Unicode Separated Values (USV) such as for data markup, including for spreadsheets, databases, text files, and more."
