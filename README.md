@@ -72,7 +72,7 @@ Link: [https://crates.io/crates/asv-to-usv](https://crates.io/crates/asv-to-usv)
 
 Suppose example.asv contains:
 
-```usv
+```asv
 a\u{001F}b\u{001F}\u{001E}
 c\u{001F}d\u{001F}\u{001E}
 ```
@@ -85,7 +85,19 @@ cat example.asv | asv-to-usv
 
 Output:
 
-```asv
+```usv
+a␟b␟␞c␟d␟␞
+```
+
+Run:
+
+```sh
+cat example.asv | asv-to-usv --style-sheets
+```
+
+Output:
+
+```usv
 a␟b␟␞
 c␟d␟␞
 ```
