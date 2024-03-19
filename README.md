@@ -22,6 +22,34 @@ cat example.asv | asv-to-usv > example.usv
 
 ## Options
 
+Options for USV separators and modifiers:
+
+* -u | --unit-separator : Set the unit separator string.
+
+* -r | --record-separator : Set the record separator string.
+
+* -g | --group-separator : Set the group separator string.
+
+* -f | --file-separator : Set the file separator string.
+
+* --escape : Set the escape string.
+
+* --end-of-transmission : Set the end-of-transmission string.
+
+Options for USV style sets:
+
+* --style-braces : Set the style to use braces, such as "{US}" for Unit Separator.
+
+* --style-controls : Set the style to use controls, such as "\u{001F}" for Unit Separator.
+
+* --style-symbols : Set the style to use symbols, such as "␟" for Unit Separator.
+
+* --style-liners : Set the style to use liners wrapping every symbol, such as "\n␟\n" for Unit Separator.
+
+* --style-sheets : Set the style similar to spreadsheet sheets, such as "␟" for Unit Separator and "␟\n" for Record Separator.
+
+Options for command line tools:
+
 * -h, --help : Print help
 
 * -V, --version : Print version
@@ -29,7 +57,6 @@ cat example.asv | asv-to-usv > example.usv
 * -v, --verbose... : Set the verbosity level: 0=none, 1=error, 2=warn, 3=info, 4=debug, 5=trace. Example: --verbose …
 
 * --test : Print test output for debugging, verifying, tracing, and the like. Example: --test
-
 
 ## Install
 
@@ -41,29 +68,26 @@ cargo install asv-to-usv
 
 Link: [https://crates.io/crates/asv-to-usv](https://crates.io/crates/asv-to-usv)
 
-
 ## Example
 
 Suppose example.asv contains:
 
 ```usv
-a\u{001F}b\u{001F}c\u{001F}\u{001E}
-d\u{001F}e\u{001F}f\u{001F}\u{001E}
-g\u{001F}h\u{001F}i\u{001F}\u{001E}
+a\u{001F}b\u{001F}\u{001E}
+c\u{001F}d\u{001F}\u{001E}
 ```
 
 Run:
 
 ```sh
-cat example.usv | asv-to-usv
+cat example.asv | asv-to-usv
 ```
 
 Output:
 
 ```asv
-a␟b␟c␟␞
-d␟e␟f␟␞
-g␟h␟i␟␞
+a␟b␟␞
+c␟d␟␞
 ```
 
 ## FAQ
@@ -98,8 +122,8 @@ Constructive feedback welcome. Pull requests and feature requests welcome.
 ## Tracking
 
 * Package: asv-to-usv-rust-crate
-* Version: 1.0.0
+* Version: 1.2.0
 * Created: 2024-03-09T13:33:20Z
-* Updated: 2024-03-12T12:55:19Z
+* Updated: 2024-03-19T16:25:30Z
 * License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 * Contact: Joel Parker Henderson (joel@sixarm.com)

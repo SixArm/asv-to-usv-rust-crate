@@ -1,6 +1,6 @@
 [package]
 name = "asv-to-usv"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "ASV to USV: Convert ASCII Separated Values (ASV) to Unicode Separated Values (USV) such as for data markup, including for spreadsheets, databases, text files, and more."
@@ -8,17 +8,17 @@ readme = "README.md"
 repository = "https://github.com/sixarm/asv-to-usv-rust-crate/"
 license = "MIT OR Apache-2.0 OR GPL-2.0 OR GPL-3.0"
 keywords = ["asv","usv",  "data", "import", "export"]
-categories = ["command-line-utilities", "encoding", "data-structures", "parsing"]
+categories = ["command-line-utilities", "encoding", "data-structures", "database", "parsing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 
 # usv: Unicode Separated Values
-usv = "0.9.0"
+usv = "0.13.2"
 
 # clap: Command Line Argument Parser
-clap = { version = "4.5.2", features = ["cargo"] }
+clap = { version = "4", features = ["cargo"] }
 
 # log: A Rust library providing a lightweight logging facade
 log = "0.4.21"

@@ -5,6 +5,7 @@
 //! such as being able to start our app with other arg parsers.
 
 use std::default::Default;
+use usv::style::Style;
 
 #[derive(Debug)]
 pub struct Args {
@@ -17,13 +18,17 @@ pub struct Args {
     /// Example: 5 means print debug diagnostics.
     pub(crate) log_level: Option<::log::Level>,
 
+    /// USV Style
+    /// Example: separator strings
+    pub(crate) style: Style,
 }
 
-impl Default for Args {
+impl<'a> Default for Args {
     fn default() -> Args {
         Args {
             test: false,
             log_level: None,
+            style: Style::default(),
         }
     }
 }
