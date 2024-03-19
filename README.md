@@ -25,13 +25,13 @@ cat example.asv | asv-to-usv > example.usv
 
 Options for USV separators and modifiers:
 
-* -u | --unit-separator : Set the unit separator string.
+* -u, --unit-separator : Set the unit separator string.
 
-* -r | --record-separator : Set the record separator string.
+* -r, --record-separator : Set the record separator string.
 
-* -g | --group-separator : Set the group separator string.
+* -g, --group-separator : Set the group separator string.
 
-* -f | --file-separator : Set the file separator string.
+* -f, --file-separator : Set the file separator string.
 
 * --escape : Set the escape string.
 
