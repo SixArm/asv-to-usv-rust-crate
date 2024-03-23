@@ -1,6 +1,6 @@
 # asv-to-usv
 
-Convert [ASCII Separated Values (ASV)](https://github.com/SixArm/usv/tree/main/doc/comparisons/asv) 
+Convert [ASCII Separated Values (ASV)](https://github.com/SixArm/usv/tree/main/doc/comparisons/asv)
 to [Unicode Separated Values (USV)](https://github.com/sixarm/usv).
 
 Syntax:
@@ -15,39 +15,47 @@ Example:
 cat example.asv | asv-to-usv
 ```
 
-Example with output to a file:
-
-```sh
-cat example.asv | asv-to-usv > example.usv
-```
+More examples below.
 
 ## Options
 
 Options for USV separators and modifiers:
 
-* -u, --unit-separator : Set the unit separator string.
+* -u, --us : Set the unit separator (US) string.
 
-* -r, --record-separator : Set the record separator string.
+* -r, --rs : Set the record separator (RS) string.
 
-* -g, --group-separator : Set the group separator string.
+* -g, --gs : Set the group separator (GS) string.
 
-* -f, --file-separator : Set the file separator string.
+* -f, --fs : Set the file separator (FS) string.
 
-* --escape : Set the escape string.
+* -e, --esc : Set the escape (ESC) string.
 
-* --end-of-transmission : Set the end-of-transmission string.
+* -z, --eot : Set the end of transmission (EOT) string.
 
-Options for USV style sets:
+Options for USV style:
 
 * --style-braces : Set the style to use braces, such as "{US}" for Unit Separator.
 
-* --style-controls : Set the style to use controls, such as "\u{001F}" for Unit Separator.
+* --style-controls : Set the style to use controls, such as "\u{1F}" for Unit Separator.
 
 * --style-symbols : Set the style to use symbols, such as "␟" for Unit Separator.
 
-* --style-liners : Set the style to use liners wrapping every symbol, such as "\n␟\n" for Unit Separator.
+Options for USV layout:
 
-* --style-sheets : Set the style similar to spreadsheet sheets, such as "␟" for Unit Separator and "␟\n" for Record Separator.
+* --layout-0: Show each item with no line around it. This is no layout, in other words one long line.
+
+* --layout-1: Show each item with one line around it. This is like single-space lines for long form text.
+
+* --layout-2: Show each item with two lines around it. This is like double-space lines for long form text.
+
+* --layout-units: Show each unit on one line. This can be helpful for line-oriented tools.
+
+* --layout-records: Show each record on one line. This is like a typical spreadsheet sheet export.
+
+* --layout-groups: Show each group on one line. This can be helpful for folio-oriented tools.
+
+* --layout-files: Show one file on one line. This can be helpful for archive-oriented tools.
 
 Options for command line tools:
 
@@ -71,11 +79,11 @@ Link: [https://crates.io/crates/asv-to-usv](https://crates.io/crates/asv-to-usv)
 
 ## Example
 
+
 Suppose example.asv contains:
 
 ```asv
-a\u{001F}b\u{001F}\u{001E}
-c\u{001F}d\u{001F}\u{001E}
+a\u{1F}b\u{1F}\u{1E}c\u{1F}d\u{1F}\u{1E}
 ```
 
 Run:
@@ -87,20 +95,21 @@ cat example.asv | asv-to-usv
 Output:
 
 ```usv
-a␟b␟␞c␟d␟␞
+a␟b␟␞
+c␟d␟␞
 ```
 
-Run:
+If you prefer to render markers with braces, to see the markers more easily:
 
 ```sh
-cat example.asv | asv-to-usv --style-sheets
+cat example.csv | asv-to-usv --style-braces
 ```
 
 Output:
 
 ```usv
-a␟b␟␞
-c␟d␟␞
+a{US}b{US}{RS}
+c{US}d{US}{RS}
 ```
 
 ## FAQ
@@ -135,8 +144,8 @@ Constructive feedback welcome. Pull requests and feature requests welcome.
 ## Tracking
 
 * Package: asv-to-usv-rust-crate
-* Version: 1.2.0
+* Version: 1.3.0
 * Created: 2024-03-09T13:33:20Z
-* Updated: 2024-03-19T16:25:30Z
+* Updated: 2024-03-24T10:05:15Z
 * License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 * Contact: Joel Parker Henderson (joel@sixarm.com)

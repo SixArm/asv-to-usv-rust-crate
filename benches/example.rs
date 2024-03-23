@@ -19,9 +19,9 @@ pub fn random_asv_data(unit_length: usize, unit_count: usize, record_count: usiz
     for _ in 0..record_count {
         for _ in 0..unit_count {
             s += &random_string(unit_length);
-            s += "\u{001F}";
+            s += "\u{1F}";
         }
-        s += "\u{001D}";
+        s += "\u{1D}";
     }
     s
 }
