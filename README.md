@@ -114,6 +114,16 @@ c{US}d{US}{RS}
 
 ## FAQ
 
+### What converters are available?
+
+* [asv-to-usv](https://crates.io/crates/asv-to-usv] & [usv-to-asv](https://crates.io/crates/usv-to-asv)
+
+* [csv-to-usv](https://crates.io/crates/asv-to-csv] & [usv-to-csv](https://crates.io/crates/usv-to-csv)
+
+* [json-to-usv](https://crates.io/crates/json-to-usv] & [usv-to-json](https://crates.io/crates/usv-to-json)
+
+* [xlsx-to-usv](https://crates.io/crates/xlsx-to-usv] & [usv-to-asv](https://crates.io/crates/usv-to-xlsx)
+
 ### When to use this command?
 
 Use this command when you want to convert from ASV to USV.
@@ -123,10 +133,6 @@ records, and you want to convert it to USV data, such as for visual editing.
 
 Our real-world use case is converting a bunch of document-oriented data from a
 variety of programs to a variety of data formats, spreadsheets, and databases.
-
-### Is there a similar command to convert from USV to ASV?
-
-Yes: [asv-to-usv](https://crates.io/crates/usv-to-asv).
 
 ### Why use USV instead of ASV?
 
