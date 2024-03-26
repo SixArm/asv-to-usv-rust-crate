@@ -25,7 +25,7 @@ mod tests {
     #[test]
     fn asv_to_usv_test() {
         let asv = EXAMPLE_INPUT_FILES;
-        let usv = usv::examples::EXAMPLE_STYLE_SYMBOLS_FILES;
+        let usv = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS;
         let style = Style::default();
         assert_eq!(asv_to_usv(&asv, &style), usv);
     }

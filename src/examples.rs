@@ -1,1 +1,1 @@
-pub const EXAMPLE_INPUT_FILES: &str = &usv::examples::EXAMPLE_STYLE_CONTROLS_FILES;
+pub const EXAMPLE_INPUT_FILES: &str = &usv::examples::EXAMPLE_FILES_STYLE_CONTROLS;

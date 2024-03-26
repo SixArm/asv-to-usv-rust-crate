@@ -14,7 +14,7 @@ fn command_with_custom_separators_with_short_options() {
         .arg("-z").arg("{EOT}")
         , EXAMPLE_INPUT_FILES
     );
-    assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_STYLE_BRACES_FILES));
+    assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_FILES_STYLE_BRACES));
 }
 
 #[test]
@@ -29,5 +29,5 @@ fn command_with_custom_separators_with_long_options() {
         .arg("--eot").arg("{EOT}")
         , EXAMPLE_INPUT_FILES
     );
-    assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_STYLE_BRACES_FILES));
+    assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_FILES_STYLE_BRACES));
 }

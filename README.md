@@ -83,7 +83,7 @@ Link: [https://crates.io/crates/asv-to-usv](https://crates.io/crates/asv-to-usv)
 Suppose example.asv contains:
 
 ```asv
-a\u{1F}b\u{1F}\u{1E}c\u{1F}d\u{1F}\u{1E}
+a\u{1F}b\u{1E}c\u{1F}d\u{1E}
 ```
 
 Run:
@@ -95,8 +95,8 @@ cat example.asv | asv-to-usv
 Output:
 
 ```usv
-a␟b␟␞
-c␟d␟␞
+a␟b␞
+c␟d␞
 ```
 
 If you prefer to render markers with braces, to see the markers more easily:
@@ -108,8 +108,8 @@ cat example.csv | asv-to-usv --style-braces
 Output:
 
 ```usv
-a{US}b{US}{RS}
-c{US}d{US}{RS}
+a{US}b{RS}
+c{US}d{RS}
 ```
 
 ## FAQ
@@ -150,8 +150,8 @@ Constructive feedback welcome. Pull requests and feature requests welcome.
 ## Tracking
 
 * Package: asv-to-usv-rust-crate
-* Version: 1.3.0
+* Version: 1.4.0
 * Created: 2024-03-09T13:33:20Z
-* Updated: 2024-03-24T10:05:15Z
+* Updated: 2024-03-26T17:35:09Z
 * License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 * Contact: Joel Parker Henderson (joel@sixarm.com)
