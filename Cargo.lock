@@ -67,7 +67,7 @@ dependencies = [
 
 [[package]]
 name = "asv-to-usv"
-version = "1.4.0"
+version = "1.4.1"
 dependencies = [
  "clap",
  "criterion",
@@ -577,9 +577,9 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 
 [[package]]
 name = "usv"
-version = "0.16.2"
+version = "0.16.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e595664f55a929b609dd30846398392041a42517d734b1cc7f681e1243a920f5"
+checksum = "e9a08c0df3843295fc8326421d04f6a5aeb79b89300bd3691656f7eb2d17b2ac"
 
 [[package]]
 name = "utf8parse"
