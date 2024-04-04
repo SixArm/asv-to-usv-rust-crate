@@ -83,7 +83,7 @@
 //! Suppose example.asv contains:
 //! 
 //! ```asv
-//! a\u{1F}b\u{1E}c\u{1F}d
+//! a\u{1F}b\u{1F}\u{1E}c\u{1F}d\u{1F}\u{1E}
 //! ```
 //! 
 //! Run:
@@ -95,20 +95,21 @@
 //! Output:
 //! 
 //! ```usv
-//! a␟b␞
-//! c␟d
+//! a␟b␟␞
+//! c␟d␟␞
 //! ```
 //! 
-//! If you prefer to render markers with braces (to see the markers more easily) and layout with no newlines (to match ASV better) then run:
+//! If you prefer to render markers with braces, to see the markers more easily:
 //! 
 //! ```sh
-//! cat example.csv | asv-to-usv --style-braces --layout-0
+//! cat example.csv | asv-to-usv --style-braces
 //! ```
 //! 
 //! Output:
 //! 
 //! ```usv
-//! a{US}b{RS}c{US}d
+//! a{US}b{US}{RS}
+//! c{US}d{US}{RS}
 //! ```
 //! 
 //! ## FAQ
@@ -149,9 +150,9 @@
 //! ## Tracking
 //! 
 //! * Package: asv-to-usv-rust-crate
-//! * Version: 1.4.1
+//! * Version: 1.4.2
 //! * Created: 2024-03-09T13:33:20Z
-//! * Updated: 2024-04-02T20:32:38Z
+//! * Updated: 2024-04-03T23:35:27Z
 //! * License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 //! * Contact: Joel Parker Henderson (joel@sixarm.com)
 

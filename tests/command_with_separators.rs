@@ -3,7 +3,7 @@ use asv_to_usv::examples::*;
 use std::process::Command;
 
 #[test]
-fn command_with_custom_separators_with_short_options() {
+fn command_with_separators_with_short_options() {
     let mut command = Command::new(&*COMMAND_OS);
     let actual = command_io_str_to_string(command
         .arg("-u").arg("{US}")
@@ -18,7 +18,7 @@ fn command_with_custom_separators_with_short_options() {
 }
 
 #[test]
-fn command_with_custom_separators_with_long_options() {
+fn command_with_separators_with_long_options() {
     let mut command = Command::new(&*COMMAND_OS);
     let actual = command_io_str_to_string(command
         .arg("--us").arg("{US}")
