@@ -37,7 +37,7 @@ Options for USV style:
 
 * --style-braces : Set the style to use braces, such as "{US}" for Unit Separator.
 
-* --style-controls : Set the style to use controls, such as "\u{1F}" for Unit Separator.
+* --style-controls : Set the style to use controls, such as "\u001F" for Unit Separator.
 
 * --style-symbols : Set the style to use symbols, such as "␟" for Unit Separator.
 
@@ -83,7 +83,7 @@ Link: [https://crates.io/crates/asv-to-usv](https://crates.io/crates/asv-to-usv)
 Suppose example.asv contains:
 
 ```asv
-a\u{1F}b\u{1F}\u{1E}c\u{1F}d\u{1F}\u{1E}
+a\u001Fb\u001F\u001Ec\u001Fd\u001F\u001E
 ```
 
 Run:

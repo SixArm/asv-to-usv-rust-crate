@@ -10,10 +10,10 @@ pub fn asv_to_usv<
     style: &Style,
 ) -> String {
     usv.as_ref()
-    .replace("\u{1F}", &style.unit_separator)
-    .replace("\u{1E}", &style.record_separator)
-    .replace("\u{1D}", &style.group_separator)
-    .replace("\u{1C}", &style.file_separator)
+    .replace("\u{001F}", &style.unit_separator)
+    .replace("\u{001E}", &style.record_separator)
+    .replace("\u{001D}", &style.group_separator)
+    .replace("\u{001C}", &style.file_separator)
 }
 
 #[cfg(test)]
