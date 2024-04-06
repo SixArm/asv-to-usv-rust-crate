@@ -99,6 +99,19 @@ a␟b␟␞
 c␟d␟␞
 ```
 
+If you prefer to render no newlines, which is more like the input:
+
+```sh
+cat example.csv | asv-to-usv --layout-0
+```
+
+Output:
+
+```usv
+a␟b␟␞c␟d␟␞
+```
+
+
 If you prefer to render markers with braces, to see the markers more easily:
 
 ```sh
