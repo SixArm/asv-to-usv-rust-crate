@@ -11,9 +11,9 @@ pub fn asv_to_usv<
 ) -> String {
     usv.as_ref()
     .replace("\u{001F}", &style.unit_separator)
-    .replace("\u{001E}", &style.record_separator)
-    .replace("\u{001D}", &style.group_separator)
-    .replace("\u{001C}", &style.file_separator)
+    .replace("\u{001E}", &format!("{}{}", style.unit_separator, style.record_separator))
+    .replace("\u{001D}", &format!("{}{}{}", style.unit_separator, style.record_separator, style.group_separator))
+    .replace("\u{001C}", &format!("{}{}{}{}", style.unit_separator, style.record_separator, style.group_separator, style.file_separator))
 }
 
 #[cfg(test)]
@@ -24,7 +24,7 @@ mod tests {
 
     #[test]
     fn asv_to_usv_test() {
-        let asv = EXAMPLE_INPUT_FILES;
+        let asv = EXAMPLE_ASV_FILES;
         let usv = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS;
         let style = Style::default();
         assert_eq!(asv_to_usv(&asv, &style), usv);

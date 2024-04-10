@@ -12,7 +12,7 @@ fn command_with_separators_with_short_options() {
         .arg("-f").arg("{FS}")
         .arg("-e").arg("{ESC}")
         .arg("-z").arg("{EOT}")
-        , EXAMPLE_INPUT_FILES
+        , EXAMPLE_ASV_FILES
     );
     assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_FILES_STYLE_BRACES));
 }
@@ -21,13 +21,13 @@ fn command_with_separators_with_short_options() {
 fn command_with_separators_with_long_options() {
     let mut command = Command::new(&*COMMAND_OS);
     let actual = command_io_str_to_string(command
-        .arg("--us").arg("{US}")
-        .arg("--rs").arg("{RS}")
-        .arg("--gs").arg("{GS}")
-        .arg("--fs").arg("{FS}")
-        .arg("--esc").arg("{ESC}")
-        .arg("--eot").arg("{EOT}")
-        , EXAMPLE_INPUT_FILES
+        .arg("--unit-separator").arg("{US}")
+        .arg("--record-separator").arg("{RS}")
+        .arg("--group-separator").arg("{GS}")
+        .arg("--file-separator").arg("{FS}")
+        .arg("--escape").arg("{ESC}")
+        .arg("--end-of-transmission").arg("{EOT}")
+        , EXAMPLE_ASV_FILES
     );
     assert_eq!(actual, format!("{}\n", usv::examples::EXAMPLE_FILES_STYLE_BRACES));
 }

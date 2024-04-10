@@ -37,7 +37,7 @@ fn bench_example(c: &mut Criterion){
         &format!("benchmark group unit_length: {}, unit_count: {}, record_count: {}", unit_length, unit_count, record_count)
     );
     group.sample_size(10);
-    group.bench_function("asv_to_usv", |b| b.iter(|| asv_to_usv(&asv_data)));
+    group.bench_function("asv_to_usv", |b| b.iter(|| asv_to_usv(&asv_data, &usv::style::Style::default())));
     group.finish();
 }
 

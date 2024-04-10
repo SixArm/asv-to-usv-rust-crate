@@ -21,17 +21,17 @@
 //! 
 //! Options for USV separators and modifiers:
 //! 
-//! * -u, --us : Set the unit separator (US) string.
+//! * -u, --unit-separator : Set the unit separator (US) string.
 //! 
-//! * -r, --rs : Set the record separator (RS) string.
+//! * -r, --record-separator : Set the record separator (RS) string.
 //! 
-//! * -g, --gs : Set the group separator (GS) string.
+//! * -g, --group-separator : Set the group separator (GS) string.
 //! 
-//! * -f, --fs : Set the file separator (FS) string.
+//! * -f, --file-separator : Set the file separator (FS) string.
 //! 
-//! * -e, --esc : Set the escape (ESC) string.
+//! * -e, --escape : Set the escape (ESC) string.
 //! 
-//! * -z, --eot : Set the end of transmission (EOT) string.
+//! * -z, --end-of-transmission : Set the end of transmission (EOT) string.
 //! 
 //! Options for USV style:
 //! 
@@ -83,7 +83,7 @@
 //! Suppose example.asv contains:
 //! 
 //! ```asv
-//! a\u001Fb\u001F\u001Ec\u001Fd\u001F\u001E
+//! a\u001Fb\u001Ec\u001Fd\u001E
 //! ```
 //! 
 //! Run:
@@ -155,9 +155,9 @@
 //! ## Tracking
 //! 
 //! * Package: asv-to-usv-rust-crate
-//! * Version: 1.5.0
+//! * Version: 1.5.1
 //! * Created: 2024-03-09T13:33:20Z
-//! * Updated: 2024-04-04T13:58:39Z
+//! * Updated: 2024-04-10T20:51:41Z
 //! * License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 //! * Contact: Joel Parker Henderson (joel@sixarm.com)
 

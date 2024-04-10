@@ -38,32 +38,32 @@ fn matches() -> clap::ArgMatches {
     .arg(Arg::new("unit-separator")
         .help("Set the unit separator (US) string")
         .short('u')
-        .long("us")
+        .long("unit-separator")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("record-separator")
         .help("Set the record separator (RS) string.")
         .short('r')
-        .long("rs")
+        .long("record-separator")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("group-separator")
         .help("Set the group separator (GS) string.")
         .short('g')
-        .long("gs")
+        .long("group-separator")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("file-separator")
         .help("Set the file separator (FS) string.")
         .short('f')
-        .long("fs")
+        .long("file-separator")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("escape")
         .help("Set the escape (ESC) string.")
         .short('e')
-        .long("esc")
+        .long("escape")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("end-of-transmission")
         .help("Set the end of transmission (EOT) string.")
         .short('z')
-        .long("eot")
+        .long("end-of-transmission")
         .action(clap::ArgAction::Set))
     .arg(Arg::new("style-symbols")
         .help(r#"Show marks as symbols, such as "␟" for Unit Separator."#)
@@ -177,8 +177,8 @@ fn matches() -> clap::ArgMatches {
 }
 
 fn style(matches: &clap::ArgMatches) -> usv::style::Style {
-    let style = style_trait(matches).style();
-    let mut style = layout_trait(matches).layout(&style);
+    let style = matches_to_style(matches);
+    let mut style = matches_to_layout(matches).map_style(&style);
     if let Some(x) = matches.get_one::<String>("unit-separator") {
         style.unit_separator = String::from(x)
     }
@@ -200,21 +200,21 @@ fn style(matches: &clap::ArgMatches) -> usv::style::Style {
     style
 }
 
-fn style_trait(matches: &clap::ArgMatches) -> Box<dyn usv::style::StyleTrait> {
+fn matches_to_style(matches: &clap::ArgMatches) -> usv::style::Style {
     if matches.get_flag("style-symbols") {
-        Box::new(usv::style::style_symbols::StyleSymbols)
+        usv::style::style_symbols()
     } else
     if matches.get_flag("style-controls") {
-        Box::new(usv::style::style_controls::StyleControls)
+        usv::style::style_controls()
     } else
     if matches.get_flag("style-braces") {
-        Box::new(usv::style::style_braces::StyleBraces)
+        usv::style::style_braces()
     } else {
-        Box::new(usv::style::style_symbols::StyleSymbols)
+        usv::style::style_symbols()
     }
 }
 
-fn layout_trait(matches: &clap::ArgMatches) -> Box<dyn usv::layout::LayoutTrait> {
+fn matches_to_layout(matches: &clap::ArgMatches) -> Box<dyn usv::style::MapStyle> {
     if matches.get_flag("layout-0") {
         Box::new(usv::layout::layout_0::Layout0)
     } else
