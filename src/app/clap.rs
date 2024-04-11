@@ -177,8 +177,18 @@ fn matches() -> clap::ArgMatches {
 }
 
 fn style(matches: &clap::ArgMatches) -> usv::style::Style {
-    let style = matches_to_style(matches);
-    let mut style = matches_to_layout(matches).map_style(&style);
+    let style = if matches.get_flag("style-symbols") {
+        usv::style::style_symbols()
+    } else
+    if matches.get_flag("style-controls") {
+        usv::style::style_controls()
+    } else
+    if matches.get_flag("style-braces") {
+        usv::style::style_braces()
+    } else {
+        usv::style::style_symbols()
+    };
+    let mut style = layout(matches).map_style(&style);
     if let Some(x) = matches.get_one::<String>("unit-separator") {
         style.unit_separator = String::from(x)
     }
@@ -200,21 +210,7 @@ fn style(matches: &clap::ArgMatches) -> usv::style::Style {
     style
 }
 
-fn matches_to_style(matches: &clap::ArgMatches) -> usv::style::Style {
-    if matches.get_flag("style-symbols") {
-        usv::style::style_symbols()
-    } else
-    if matches.get_flag("style-controls") {
-        usv::style::style_controls()
-    } else
-    if matches.get_flag("style-braces") {
-        usv::style::style_braces()
-    } else {
-        usv::style::style_symbols()
-    }
-}
-
-fn matches_to_layout(matches: &clap::ArgMatches) -> Box<dyn usv::style::MapStyle> {
+fn layout(matches: &clap::ArgMatches) -> Box<dyn usv::style::MapStyle> {
     if matches.get_flag("layout-0") {
         Box::new(usv::layout::layout_0::Layout0)
     } else
